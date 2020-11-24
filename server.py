@@ -32,9 +32,9 @@ def predict_image_from_bytes(input_bytes):
 
 
 app = Starlette(debug=True)
-classes = ['foot', 'hand']
+classes = ['dengue', 'nao-dengue']
 defaults.device = torch.device('cpu')
-learn = load_learner('models')
+learn = load_learner('https://github.com/luanfrinhani/hand-or-foot/tree/master/models/classification-teste.pkl')
 
 
 @app.route("/upload", methods=["POST"])
